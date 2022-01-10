@@ -1,0 +1,29 @@
+// 以下皆是設定 中字型時的調整
+// middleword
+.middleword {
+    .block03{
+        .news{
+            ul{
+                li{
+                    height: 100px;
+                    @media(max-width: 1199px) and (min-width: 992px) {
+                        height: 150px;
+                    }
+                    @include screen('tablet') {
+                        height: 85px;
+                    }
+                    @include screen('mobile') {
+                        height: auto;
+                    }
+                    a {
+                        display: block;
+                        padding: 6px 0 6px 88px;
+                        span {
+                            margin-left: -88px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

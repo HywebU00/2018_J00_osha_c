@@ -1,0 +1,134 @@
+footer {
+    @include box-sizing(border-box);
+    text-align: left;
+    font-size: 0.938em;
+    .container {
+        @include gutter();
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #626262;
+        >div {
+            padding-bottom: 1em;
+        }
+    }
+    a {
+        text-decoration: underline;
+        color: lighten($color-yellow, 25);
+        &:hover,
+        &:focus {
+            color: lighten($color-yellow, 25);
+            text-decoration: none;
+        }
+    }
+    .footer_qq {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(2);
+        @include make-lg-column(1);
+        @include gutter();
+    }
+    .footer_info {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(8);
+        @include make-lg-column(8);
+        @include gutter();
+    }
+    .footer_icon {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(2);
+        @include make-lg-column(3);
+        @include gutter();
+    }
+    // 版權連結
+    .footer_info {
+        @media(min-width: 1200px) {
+            padding-left: 40px;
+        }
+    }
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        margin: 0;
+        li {
+            float: left;
+            display: block;
+            margin: 0px 15px 5px 0px;
+            position: relative;
+            a {
+                display: block;
+                padding: 0;
+                color: #fff;
+                background-color: transparent;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+            &:before {
+                content: '';
+                width: 1px;
+                height: 13px;
+                background-color: #fff;
+                position: absolute;
+                right: -7px;
+                top: 5px;
+            }
+            &:last-child {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+    p {
+        line-height: 1.65em;
+        margin: 0 0 20px;
+        padding: 0;
+        color: #fff;
+    }
+    .Copyright {
+        padding: 0;
+        margin: 0;
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right: 5px;
+        em {
+            font-style: normal;
+            color: #049ba1;
+            padding: 0 .5em;
+        }
+    }
+    .image {
+        float: left;
+        margin-right: 10px;
+    }
+    //標章
+    .footer_icon {
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                list-style-type: none;
+                display: inline-block;
+                margin-right: 5px;
+                a {
+                    display: block;
+                    &:focus{
+                        box-shadow: 0 0px 0px 3px #ffbe00;
+                    }
+                }
+            }
+        }
+        a {
+            display: inline-block;
+            vertical-align: top;
+        }
+        img {
+            max-width: 120px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+// 以下皆是設定 大字型時的調整
+// bigword
+.bigword{
+    .block03{
+        .news{
+            ul {
+                li {
+                    height: 130px;
+                    @media(max-width: 1199px) and (min-width: 992px) {
+                        height: 180px;
+                    }
+                    @include screen('tablet') {
+                        height: 105px;
+                    }
+                    @include screen('mobile') {
+                        height: auto;
+                    }
+                    a {
+                        display: block;
+                        padding: 6px 0 6px 96px;
+                        line-height: 150%;
+                        span {
+                            margin-left: -96px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
