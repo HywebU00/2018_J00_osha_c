@@ -9,7 +9,7 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="hfile:///Users/u0092052/Documents/My%E5%B7%A5%E4%BD%9C%E8%B3%87%E6%96%99/Project%E5%B0%88%E6%A1%88/2018/2018%E5%8B%9E%E5%8B%95%E9%83%A8/%E8%81%B7%E5%AE%89%E7%BD%B2/%E8%81%B7%E6%A5%AD%E5%AE%89%E5%85%A8%E8%A1%9B%E7%94%9F%E7%BD%B2/2018_J00_osha_c/np.html#ttps://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
     <!-- slick -->
@@ -21,7 +21,7 @@
 
 <body>
     <!-- 影片燈箱區start -->
-    <div class="movie_lightbox">
+    <div class="movie_lightbox hidden">
         <div class="moviebox">
             <div class="close"><a href="#"><img src="images/icon_close.png"></a></div>
             <div class="movie" style="text-align: center;min-height:400px;height: auto">
@@ -35,10 +35,11 @@
     <!-- 直接跳主內容區 -->
     <a class="goCenter" href="#center" tabindex="1">按 Enter 到主內容區</a>
     <!-- wrapper 最大寬度 -->
-    <div class="wrapper"><a class="accesskey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a>
+    <div class="wrapper">
         <!-- header Start -->
         <header class="header">
             <div class="container">
+                <a class="accesskey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a>
                 <!-- navigation Start -->
                 <nav class="navigation">
                     <!-- 一組ul預設靠右 -->
@@ -56,11 +57,13 @@
                 <!-- navigation end -->
                 <h1><a href="index.html" tabindex="3"><img src="images/logo.png" alt="勞動部職業安全衛生署logo" /></a></h1>
                 <!--字級設定 start -->
-                <div class="custom"> <span>字級：</span>
+                <div class="font_size">
+                    <span>字級：</span>
+                    <!-- 英文用<span>font-size：</span> -->
                     <ul>
-                        <li><a href="#" class="small here">小</a></li>
-                        <li><a href="#" class="middle">中</a></li>
-                        <li><a href="#" class="big">大</a></li>
+                        <li><a href="#" class="small">小</a></li>
+                        <li><a href="#" class="medium">中</a></li>
+                        <li><a href="#" class="large">大</a></li>
                     </ul>
                 </div>
                 <!--字級設定 end -->
@@ -631,7 +634,7 @@
         <!-- fatfooter Start -->
         <section class="fatfooter">
             <div class="container">
-                <a href="#aB" title="FatFooter" id="aB" accesskey="B" class="accesskey">:::</a>
+                <!--  <a href="#aB" title="FatFooter" id="aB" accesskey="B" class="accesskey">:::</a> -->
                 <button type="button" name="收合" class="btn btn-fatfooter">收合</button>
                 <nav>
                     <ul>
@@ -1036,6 +1039,7 @@
         <!-- footer start-->
         <footer>
             <div class="container">
+                <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁尾區">:::</a>
                 <div class="footer_qq">
                     <img src="images/qq.png" alt="QRCode">
                 </div>
@@ -1062,7 +1066,7 @@
         </footer>
     </div>
     <a href="javascript:;" class="scrollToTop" title="回頁首">回頁首</a>
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="vendor/jquery.easing.min.js "></script>
     <script type="text/javascript" src="vendor/slick/slick.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>

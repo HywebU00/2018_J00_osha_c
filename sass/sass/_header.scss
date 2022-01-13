@@ -194,7 +194,7 @@
     }
 }
 //字級大小
-.custom {
+.font_size {
     position: absolute;
     z-index: 99;
     top: 0px;
@@ -225,22 +225,24 @@
                 background-color: #666;
                 &:hover,
                 &:focus,
-                &.here {
+                &.active {
                     background-color:$primaryColor;
                 }
+                &.small { font-size: .938em; }
+                &.large { font-size: 1.125em; }
             }
         }
     }
 }
-.smallword {
-    font-size: 1em
-}
-.middleword {
-    font-size: 1.125em
-}
-.bigword {
-    font-size: 1.25em
-}
+// .smallword {
+//     font-size: 1em
+// }
+// .middleword {
+//     font-size: 1.125em
+// }
+// .bigword {
+//     font-size: 1.25em
+// }
 //search
 .search {
     min-width: 25%;

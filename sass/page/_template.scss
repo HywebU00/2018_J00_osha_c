@@ -50,10 +50,19 @@ body {
        
        
     }
+    &.small_size {
+        
+    }
+    &.medium_size {
+        font-size: 1.125em;
+    }
+    &.large_size {
+        font-size: 1.25em;
+    }
 }
 .innerpage{
     
-    .content{
+    .center_block{
         h2{
             color: #fff!important;
             background-color: $secondaryColor;
@@ -81,10 +90,15 @@ body {
         }
     }
 }
+a:focus {
+  outline: none;
+  box-shadow: 0 0px 0px 3px  $aFocus inset;
+  @include screen('mobile') {
+    box-shadow: none;
+  }
+}
 
- :focus {
-    outline: 3px solid $lightColor;
-} //輪播點點的foucs框大小
+ //輪播點點的foucs框大小
 .slick-dots li button {
     min-width: 12px;
 } 
@@ -220,10 +234,7 @@ a{
     }
 } ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
-.innerpage {
-
-   
-    
+.innerpage { 
     >.container {
         z-index: 99;
     }
@@ -239,7 +250,7 @@ a{
         overflow: hidden;
         ;
     }
-    .content {
+    .center_block {
         @include gutter(50px);
         background-color: #fff;
         @include make-xs-column(12);
@@ -253,19 +264,7 @@ a{
         }
         
     }
-    .content2 {
-        @include gutter(50px);
-        background-color: #fff;
-        @include make-xs-column(12);
-        @include make-sm-column(12); //768px  width:33.3%
-        @include make-md-column(12); //992px  width:33.3%
-        @include make-lg-column(12); //1400px width:33.3%
-        @include box-sizing(border-box);
-        @include screen('tablet') {
-            padding: 0;
-            @include gutter(50px);
-        }
-    }
+    
 } //內頁左欄
 .submenu {
     position: relative;

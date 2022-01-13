@@ -1,5 +1,4 @@
 /*pagination*/
-
 .pagination {
     margin: 10px auto 5px;
     padding: 0px;
@@ -15,7 +14,6 @@
     .page {
         margin: 0px 0;
         padding: 0;
-
         li {
             display: inline-block;
             width: 40px;
@@ -37,13 +35,13 @@
                 &:hover,
                 &:focus {
                     background: $primaryColor;
-                    color: #fff!important;
+                    color: #fff !important;
                     border: $primaryColor solid 1px;
                 }
             }
             &.active {
                 a {
-                    color: #fff!important;
+                    color: #fff !important;
                     background: $primaryColor;
                     border: $primaryColor solid 1px;
                 }
@@ -56,17 +54,17 @@
                     background-image: url(../images/pageBtn.png);
                     background-repeat: no-repeat;
                     background-size: 53px;
-                   background-color: #eee;
-                     height: 37px;
-                     width: 40px;
+                    background-color: #eee;
+                    height: 37px;
+                    width: 40px;
                     border: 1px solid #bbb;
                     font-size: 0;
-                    margin:0;
-                   padding: 12px 10px 0;
-                   @include box-sizing(border-box);
+                    margin: 0;
+                    padding: 12px 10px 0;
+                    @include box-sizing(border-box);
                     &:hover,
                     &:focus {
-                       background-color: #ffc;
+                        background-color: #ffc;
                     }
                 }
                 &.first a {
@@ -85,11 +83,17 @@
         }
     }
 }
-
 .pagination .total {
     padding: 5px;
-    select{
-        margin-right: 5px;
+    select {
+        margin: 0px .5em;
+        @include screen('mobile') {
+            margin: 0px;
+        }
+    }
+    .btn {
+        min-width: auto;
+        padding: .4em 1em !important;
     }
 }
 @media (max-width: 767px) {
@@ -97,14 +101,11 @@
         margin: 0px 0px;
         text-align: center;
     }
-    .pagination .form_inline{
+    .pagination .form_inline {
         display: none;
     }
 }
-
-
 /*----------------------------------------------------條件查詢 */
-
 .condition {
     float: right;
     margin: 0px 0 1em;
@@ -118,7 +119,7 @@
         text-decoration: none;
         color: #666;
         &:hover {
-            border-color: #bbb!important;
+            border-color: #bbb !important;
             box-shadow: rgba(0, 0, 0, 0.35) 0 0 4px;
             color: #333;
             background-color: #fff;

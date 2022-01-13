@@ -1,16 +1,6 @@
 //自行加入的JS請寫在這裡
 //字型大中小
-$(function() {
-    $('.custom a.small').click(function() {
-        $('.main').removeClass('middleword').removeClass('bigword').addClass('smallword')
-    });
-    $('.custom a.middle').click(function() {
-        $('.main').removeClass('smallword').removeClass('bigword').addClass('middleword')
-    });
-    $('.custom a.big').click(function() {
-        $('.main').removeClass('smallword').removeClass('middleword').addClass('bigword')
-    })
-})
+
 //熱門文章
 $(function() {
     $("#b_news").click(function() {
@@ -79,28 +69,8 @@ $(function() {
         $('.block07').find('li:first>a').focus();
     });
 })
-//Accordion
-$(function() {
-    $('.accordionblock ul').css('display', 'none');
-    $('.accordionblock .topic').click(function() {
-        $(this).next('.answer').children('ul').slideToggle();
-        $(this).parent().siblings().find('ul').slideUp();
-        $(this).parent().siblings().children('.topic').removeClass('turnicon');
-        $(this).toggleClass('turnicon');
-    })
-    $('.accordionblock.open ul').css('display', 'block');
-    $('.accordionblock.open').children('.topic').addClass('turnicon');
-})
-//Accordionqa
-$(function() {
-    $('.accordionblock .A').css('display', 'none');
-    $('.accordionblock .Q').click(function() {
-        $(this).next('.A').slideToggle();
-        $(this).parent().siblings().children('.A').slideUp();
-        $(this).parent().siblings().children('.Q').removeClass('turnicon');
-        $(this).toggleClass('turnicon')
-    })
-})
+
+
 //slick
 $(function() {
     //大banner輪播
@@ -296,10 +266,37 @@ $(function() {
     $('.question .button').click(function() {
         $('.question .block').stop().slideToggle();
     })
+    $('.question .button').keyup(function() {
+        $('.question .block').stop().slideDown();
+    })
     $('.question .del').click(function() {
         $('.question .block').stop().slideUp();
     })
+   $('.question .block').find('li:last>a').focusout(function() {
+        $('.question .block').stop().slideUp();
+    });
 })
+// 收合
+    $(".accordion_grounp .accordionblock").each(function() {
+        var _accordionItem3 = $(this).children(".Q").children('a');
+        var _word = _accordionItem3.children('.word');
+        var _ullist = $(this).children('.answer').find('.answer_list');
+        if (_ullist.length == 0) {
+            _word.hide();
+        } else {
+            function accordion3(e) {
+                if (_ullist.is(':visible')) {
+                    _ullist.slideUp();
+                    _word.text('展開').addClass('close');
+                } else {
+                    _ullist.slideDown();
+                    _word.text('收合').removeClass('close');
+                }
+            }
+            _accordionItem3.click(accordion3);
+            // _accordionItem3.keyup(accordion3);
+        }
+    });
 //生育福利站
 $(function() {
     $('map area').click(function() {
@@ -310,50 +307,7 @@ $(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('#' + _this.data("anchorid")).offset().top - 50 }, 1200, 'easeOutExpo');
     })
 })
-//$(function(){
-//   $('#data01').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23438').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data02').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23437').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data03').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23436').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data04').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23435').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data05').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23442').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data06').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23440').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data07').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23446').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data08').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23449').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data09').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23448').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data10').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23447').offset().top - 50 }, 1200, 'easeOutExpo');
-//    });
-//   $('#data11').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23445').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data12').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23444').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data13').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23441').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//   $('#data14').click(function() {
-//        $('body,html').stop(true, true).animate({ scrollTop: $('#23449').offset().top - 50 }, 1200, 'easeOutExpo');
-//    }); 
-//})
+
 // 影片燈箱區
 $(function() {
     $('.moviebox .close').click(function() {

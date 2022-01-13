@@ -81,7 +81,6 @@ $(function() {
     _sidebarCtrl.click(function(e) {
         showSidebar();
         e.preventDefault();
-
     });
     // 關閉動作
     _overlay.add(_sidebarClose).off().click(function() {
@@ -89,20 +88,18 @@ $(function() {
     });
     _overlay.off("mouseenter");
     // 無障礙tab設定
-    liHasChild.keyup(
-        function() {
-            $(this).children('ul').fadeIn();
-            $(this).siblings().focus(function() {
-                $(this).hide();
-            });
+    liHasChild.keyup(function() {
+        $(this).children('ul').fadeIn();
+        $(this).siblings().focus(function() {
+            $(this).hide();
         });
+    });
     _menu.find('li').keyup(function() {
         $(this).siblings().children('ul').hide();
     });
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
-
     // 切換PC/Mobile 選單
     function mobileMenu() {
         ww = _window.outerWidth();
@@ -235,7 +232,6 @@ $(function() {
     //         $('.main').css('margin-top', 0);
     //     }
     // });
-
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////
     /*-----------------------------------*/
@@ -260,7 +256,6 @@ $(function() {
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
     $('.btn-fatfooter').click(function(e) {
-
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
                 $('.btn-fatfooter').html("收合");
@@ -282,7 +277,6 @@ $(function() {
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
-
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -297,7 +291,6 @@ $(function() {
             $(this).find('img').removeClass('img-responsive');
         });
     });
-
     /*-----------------------------------*/
     //////////////相簿縮圖+燈箱//////////////
     /*-----------------------------------*/
@@ -309,7 +302,6 @@ $(function() {
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
-
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -435,7 +427,6 @@ $(function() {
             tw = $(this).width();
             var tabItemHeight = $(this).find('.tabs>.tabItem').height();
             $(this).children('.tabs').find('.tabContent').css('top', tabItemHeight);
-
             var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
             console.log(tabContentHeight);
             var tabItemLength = $(this).find('.tabItem').length;
@@ -466,6 +457,76 @@ $(function() {
     $(window).on("load resize", function(e) {
         tabs();
     });
+    /*------------------------------------*/
+    /////////////字型大小 font-size//////////
+    /*------------------------------------*/
+    $('.font_size').find('.small').click(function(e) {
+        $(this).parent('li').siblings('li').find('a').removeClass('active');
+        $('.main').removeClass('large_size medium_size')
+        $(this).addClass('active');
+        e.preventDefault();
+        createCookie('FontSize', 'small', 356);
+    });
+    $('.font_size').find('.medium').click(function(e) {
+        $(this).parent('li').siblings('li').find('a').removeClass('active');
+        $('.main').removeClass('large_size small_size').addClass('medium_size');;
+        $(this).addClass('active');
+        e.preventDefault();
+        createCookie('FontSize', 'medium', 356);
+    });
+    $('.font_size').find('.large').click(function(e) {
+        $(this).parent('li').siblings('li').find('a').removeClass('active');
+        $('.main').removeClass('medium_size').addClass('large_size');
+        $(this).addClass('active');
+        e.preventDefault();
+        createCookie('FontSize', 'large', 356);
+    });
+
+    function createCookie(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+    window.onload = function(e) {
+        var cookie = readCookie("FontSize");
+        //alert('cookie='+cookie);
+        if (cookie == 'medium') {
+            //$('.font_size').find('.medium').click();
+            $('.font_size').find('.medium').parent('li').siblings('li').find('a').removeClass('active');
+            $('.main').removeClass('large_size small_size').addClass('medium_size');
+            $('.font_size').find('.medium').addClass('active');
+            e.preventDefault();
+        } else {
+            if (cookie == 'large') {
+                //$('.font_size').find('.large').click();
+                $('.font_size').find('.large').parent('li').siblings('li').find('a').removeClass('active');
+                $('.main').removeClass('small_size medium_size').addClass('large_size');
+                $('.font_size').find('.large').addClass('active');
+                e.preventDefault();
+            } else {
+                //這裡是預設宣告
+                //$('.font_size').find('.small').click();
+                $('.font_size').find('.small').parent('li').siblings('li').find('a').removeClass('active');
+                $('.main').removeClass('large_size medium_size');
+                $('.font_size').find('.small').addClass('active');
+                e.preventDefault();
+            }
+        }
+    }
     /*-----------------------------------*/
     ///////////////置頂go to top////////////
     /*-----------------------------------*/
@@ -481,7 +542,46 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus(); //加入這行
         e.preventDefault();
+    });
+    $('.scrollToTop').keydown(function(e) {
+        _body.find('a.goCenter').focus();
+        e.preventDefault();
+    });
+    /*------------------------------------*/
+    /////gotoCenter on focus跳到 content/////
+    /*------------------------------------*/
+    $('a.goCenter').keydown(function(e) {
+        if (e.which == 13) {
+            $('#aC').focus();
+            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
+        }
+    });
+    /*-----------------------------------*/
+    /////////// 無障礙快捷鍵盤組合  //////////
+    /*-----------------------------------*/
+    $(document).on('keydown', function(e) {
+        // alt+S 查詢
+        if (e.altKey && e.keyCode == 83) {
+            $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+            $('.search').find('input[type="text"]').focus();
+        }
+        // alt+U header
+        if (e.altKey && e.keyCode == 85) {
+            $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+            $('header').find('.accesskey').focus();
+        }
+        // alt+C 主要內容區
+        if (e.altKey && e.keyCode == 67) {
+            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top - 70 }, 800, 'easeOutExpo');
+            $('.main').find('.accesskey').focus();
+        }
+        // alt+Z footer
+        if (e.altKey && e.keyCode == 90) {
+            $('html, body').stop(true, true).animate({ scrollTop: $('footer').find('.accesskey').offset().top }, 800, 'easeOutExpo');
+            $('footer').find('.accesskey').focus();
+        }
     });
     /*--------------------------------------------------------*/
     /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
