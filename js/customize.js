@@ -324,3 +324,12 @@ $(function() {
         }
     });
 })
+
+
+// 新增
+$(function(){
+    // 條件查詢
+    $('.condition_searchbtn').click(function() {
+        $('.condition_searchblock').stop().slideToggle();
+    })
+})
