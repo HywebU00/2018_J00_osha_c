@@ -271,7 +271,7 @@ a{
     margin: 20px 0 25px 0;
     padding: 0;
     background-color: #fff;
-    h2 {
+    .title {
         font-size: 1.375em;
         background-color: $primaryColor;
         color: #fff;
@@ -323,7 +323,7 @@ a{
 .agency_inblock {
     margin: 0;
     padding: 0;
-    h2 {
+    .title {
         font-size: 1.375em;
         background-color: #999;
         color: #fff;
