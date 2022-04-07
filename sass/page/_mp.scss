@@ -69,7 +69,7 @@
                         width: 100%;
                     }
                     &:focus {
-                        box-shadow:none;
+                        box-shadow: none;
                         img {
                             box-shadow: 0 0px 0px 3px $color-yellow;
                         }
@@ -125,18 +125,25 @@
                     border-bottom: 1px dotted #666;
                     font-size: 0.938em;
                     height: 80px;
-                    @media(max-width: 1199px) and (min-width: 992px) {
-                        height: 130px;
-                    }
-                    @include screen('tablet') {
-                        height: 60px;
-                    }
+                    // @media(max-width: 1199px) and (min-width: 992px) {
+                    //     height: 130px;
+                    // }
+                    // @include screen('tablet') {
+                    //     height: 60px;
+                    // }
                     @include screen('mobile') {
                         height: auto;
                     }
                     a {
                         display: block;
                         padding: 6px 0 6px 80px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        line-height: 24px;
+                        height: calc(23px * 3);
                         span {
                             margin-left: -80px;
                             margin-right: 10px;

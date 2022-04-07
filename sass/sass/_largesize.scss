@@ -5,20 +5,25 @@
         .news{
             ul {
                 li {
-                    height: 130px;
+                    height: 110px;
                     @media(max-width: 1199px) and (min-width: 992px) {
-                        height: 180px;
+                        height: 120px;
                     }
                     @include screen('tablet') {
                         height: 105px;
                     }
                     @include screen('mobile') {
                         height: auto;
+
                     }
                     a {
                         display: block;
                         padding: 6px 0 6px 96px;
                         line-height: 150%;
+                        height: calc(25px * 3);
+                        @include screen('mobile'){
+                            padding: 6px 0 12px 96px;
+                        }
                         span {
                             margin-left: -96px;
                         }
