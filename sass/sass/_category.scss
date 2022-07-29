@@ -5,7 +5,7 @@
     ul {
         padding: 0;
         margin: 0;
-        overflow:hidden;
+        overflow: hidden;
         li {
             margin: 0px 5px 5px 0px;
             display: block;
@@ -15,16 +15,16 @@
     a {
         background: #fff;
         padding: .4em 1em;
-        display:block;
+        display: block;
         color: #333;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      border:1px solid #eee;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border: 1px solid #eee;
         @include box-sizing();
         @include border-radius(4px);
         &:hover,
-        &:focus , &.active{
-            background: $color-blue;
-            color:#fff;
+        &:focus, &.active {
+            background: $primaryColor;
+            color: #fff;
         }
     }
 }
