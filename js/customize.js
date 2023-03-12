@@ -1,6 +1,5 @@
 //自行加入的JS請寫在這裡
 //字型大中小
-
 //熱門文章
 $(function() {
     $("#b_news").click(function() {
@@ -34,16 +33,14 @@ $(function() {
         $(".fastlink_btn").css('display', 'block')
         $(".fastlink_btn2").css('display', 'none')
     })
-    
 })
-$(function(){
+$(function() {
     $('.fastlink_btn>a').focusin(function() {
         $(".fastlink").css({ right: 0 });
         $(".fastlink_btn").css('display', 'none');
-        $(".fastlink_btn2").css('display', 'block');    
-       
+        $(".fastlink_btn2").css('display', 'block');
     })
-    $('#fastbox').find('li:last>a').focusout(function(){
+    $('#fastbox').find('li:last>a').focusout(function() {
         $(".fastlink").css({ right: -94 });
         $(".fastlink_btn").css('display', 'block');
         $(".fastlink_btn2").css('display', 'none');
@@ -54,7 +51,6 @@ $(function() {
     $('.group01').click(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('.block03').offset().top }, 1200, 'easeOutExpo');
         $('.block03').find('li:first>a').focus();
-
     });
     $('.group02').click(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('.block04').offset().top }, 1200, 'easeOutExpo');
@@ -69,8 +65,6 @@ $(function() {
         $('.block07').find('li:first>a').focus();
     });
 })
-
-
 //slick
 $(function() {
     //大banner輪播
@@ -272,31 +266,31 @@ $(function() {
     $('.question .del').click(function() {
         $('.question .block').stop().slideUp();
     })
-   $('.question .block').find('li:last>a').focusout(function() {
+    $('.question .block').find('li:last>a').focusout(function() {
         $('.question .block').stop().slideUp();
     });
 })
 // 收合
-    $(".accordion_grounp .accordionblock").each(function() {
-        var _accordionItem3 = $(this).children(".Q").children('a');
-        var _word = _accordionItem3.children('.word');
-        var _ullist = $(this).children('.answer').find('.answer_list');
-        if (_ullist.length == 0) {
-            _word.hide();
-        } else {
-            function accordion3(e) {
-                if (_ullist.is(':visible')) {
-                    _ullist.slideUp();
-                    _word.text('展開').addClass('close');
-                } else {
-                    _ullist.slideDown();
-                    _word.text('收合').removeClass('close');
-                }
+$(".accordion_grounp .accordionblock").each(function() {
+    var _accordionItem3 = $(this).children(".Q").children('a');
+    var _word = _accordionItem3.children('.word');
+    var _ullist = $(this).children('.answer').find('.answer_list');
+    if (_ullist.length == 0) {
+        _word.hide();
+    } else {
+        function accordion3(e) {
+            if (_ullist.is(':visible')) {
+                _ullist.slideUp();
+                _word.text('展開').addClass('close');
+            } else {
+                _ullist.slideDown();
+                _word.text('收合').removeClass('close');
             }
-            _accordionItem3.click(accordion3);
-            // _accordionItem3.keyup(accordion3);
         }
-    });
+        _accordionItem3.click(accordion3);
+        // _accordionItem3.keyup(accordion3);
+    }
+});
 //生育福利站
 $(function() {
     $('map area').click(function() {
@@ -307,7 +301,6 @@ $(function() {
         $('body,html').stop(true, true).animate({ scrollTop: $('#' + _this.data("anchorid")).offset().top - 50 }, 1200, 'easeOutExpo');
     })
 })
-
 // 影片燈箱區
 $(function() {
     $('.moviebox .close').click(function() {
@@ -324,12 +317,29 @@ $(function() {
         }
     });
 })
-
-
 // 新增
-$(function(){
+$(function() {
     // 條件查詢
     $('.condition_searchbtn').click(function() {
         $('.condition_searchblock').stop().slideToggle();
     })
+})
+// 跑馬燈
+$(function() {
+    // 跑馬燈
+    if ($('.marquee').length > 0) {
+        $('.marquee ul').slick({
+            dots: false,
+            infinite: true,
+            vertical: true,
+            verticalSwiping: true,
+            speed: 300,
+            autoplaySpeed: 5000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            pauseOnHover: true, //滑鼠移過後暫停自動撥放
+            focusOnSelect: true,
+        });
+    }
 })

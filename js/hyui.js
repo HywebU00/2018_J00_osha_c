@@ -165,11 +165,11 @@ $(function() {
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
-                    $(this).children('ul').stop(true, false).fadeIn();
+                    $(this).children('ul').stop(true, false).fadeIn(200);
                 },
                 mouseleave: function() {
                     $(this).parent().siblings('ul').hide();
-                    $(this).children('ul').stop(true, false).fadeOut();
+                    $(this).children('ul').stop(true, false).fadeOut(200);
                 }
             });
             liHasChild.off('click');
