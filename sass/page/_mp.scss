@@ -1,36 +1,47 @@
 // 跑馬燈
 .marquee_block {
     .marquee {
-        height: 40px;
+        height: 50px;
         display: block;
         overflow: hidden;
-        // background: #eee;
-        margin: 2em 1em;
+        background-color: lighten($color-yellow, 30);
+        margin: .5em 0 0;
         text-align: left;
-        padding: 0 3em 0 2em;
+        padding: 0;
         position: relative;
         min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        border-bottom: 1px solid #dadada;
-        @media(max-width: 991px) {
-            margin: 1.5em 0em;
+        &:before {
+            content: '';
+            background-image: url('../images/marquee_icon.svg');
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-size: 32px;
+            background-color: $lightColor;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
+        // @media(max-width: 991px) {
+        //     margin: 1.5em 0em 0;
+        // }
         ul {
             margin: 0;
-            padding: 0;
-            list-style: none
+            padding: 0 3em 0 6em;
+            list-style: none;
+           
         }
         .slick-prev {
             width: 10px;
             height: 10px;
-            transform: rotate(90deg);
-            right: 0px !important;
-            top: 1px !important;
-            left: auto;
+            transform: rotate(0deg);
+            right: auto !important;
+            top: 32%;
+            left: 60px;
             opacity: .5;
             background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat center center;
             background-size: 16px;
@@ -49,9 +60,9 @@
         .slick-next {
             width: 10px;
             height: 10px;
-            transform: rotate(-90deg);
-            right: 0px !important;
-            top: 22px !important;
+            transform: rotate(180deg);
+            // right: 1em !important;
+            top: 32%;
             left: auto;
             opacity: .5;
             width: 20px !important;
@@ -74,27 +85,25 @@
         }
         a {
             display: block;
-            line-height: 40px;
-            margin-right: 3em;
-            font-weight: bold;
+            line-height: 50px;
+            margin-right: 0;
+            // font-weight: bold;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
             color: #000;
             text-decoration: none;
-            span {
-                color: $primaryColor;
-                margin-right: 15px;
-            }
+           
             &:hover {
-                color: $primaryColor;
+                color: $color-blue;
             }
         }
     }
 }
 //block02 輪播新聞稿
 .block02 {
-    z-index: 99; // position: relative;
+    z-index: 99;
+    // position: relative;
     .col:first-child {
         .more {
             display: none;
@@ -103,7 +112,7 @@
 }
 .col-8-4 {
     .container {
-        padding-top: 15px;
+        padding-top: 10px;
     }
     .bigbannerblock {
         @include make-xs-column(12);
