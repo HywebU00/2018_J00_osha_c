@@ -4,7 +4,7 @@
         height: 50px;
         display: block;
         overflow: hidden;
-        background-color: lighten($color-yellow, 30);
+        background-color: #fff9bf;
         margin: .5em 0 0;
         text-align: left;
         padding: 0;
@@ -13,35 +13,19 @@
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        &:before {
-            content: '';
-            background-image: url('../images/marquee_icon.svg');
-            background-repeat: no-repeat;
-            background-position: 8px center;
-            background-size: 32px;
-            background-color: $lightColor;
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
         // @media(max-width: 991px) {
         //     margin: 1.5em 0em 0;
         // }
         ul {
             margin: 0;
-            padding: 0 3em 0 6em;
+            padding: 0;
             list-style: none;
-           
         }
         .slick-prev {
-            width: 10px;
-            height: 10px;
-            transform: rotate(0deg);
-            right: auto !important;
-            top: 32%;
-            left: 60px;
+            transform: rotate(90deg);
+            right: 20px !important;
+            top: 5px !important;
+            left: auto;
             opacity: .5;
             background: url('../vendor/slick/icon_arrow_up_s.png') no-repeat center center;
             background-size: 16px;
@@ -58,11 +42,9 @@
             }
         }
         .slick-next {
-            width: 10px;
-            height: 10px;
-            transform: rotate(180deg);
-            // right: 1em !important;
-            top: 32%;
+            transform: rotate(-90deg);
+            right: 20px !important;
+            top: 27px !important;
             left: auto;
             opacity: .5;
             width: 20px !important;
@@ -83,19 +65,40 @@
             padding: 0;
             margin: 0
         }
-        a {
-            display: block;
-            line-height: 50px;
-            margin-right: 0;
-            // font-weight: bold;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            color: #000;
-            text-decoration: none;
-           
-            &:hover {
-                color: $color-blue;
+        li {
+            padding: 0;
+            font-size: 1.125em;
+            a {
+                display: block;
+                line-height: 50px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: #000;
+                padding-right: 3em;
+                text-decoration: none;
+                
+                &:hover {
+                    color: $color-blue;
+                }
+            }
+            span {
+                background-color: $color-orange;
+                padding: 5px 10px;
+                border-radius: 5px;
+                color: #fff;
+                position: relative;
+                margin: 0 1em 0 .5em;
+                &:after {
+                    content: '';
+                    border: 7px solid $color-orange;
+                    border-top-color: transparent;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                    position: absolute;
+                    right: -13px;
+                    top: 9px;
+                }
             }
         }
     }
