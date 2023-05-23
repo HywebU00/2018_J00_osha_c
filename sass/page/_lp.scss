@@ -562,7 +562,7 @@
                 max-width: 100%;
                 padding-left: 0;
             }
-            h3 {
+            .item_title {
                 margin: 5px 0 10px;
                 padding: 0;
                 font-size: 1.25em;
@@ -600,10 +600,11 @@
             margin-bottom: 8px;
             color: #666;
         }
-        h3 {
+        .item_title {
             margin: 5px 0 10px;
             padding: 0;
             font-size: 1.25em;
+            
             a {
                 text-decoration: underline;
                 display: block;
