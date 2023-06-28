@@ -157,11 +157,14 @@
     white-space: nowrap;
     font-size: 1.125em;
     a {
-        color: #1579a9;
-        ;
+        color: #333;
+        padding:5px;
         font-weight: bolder;
-        &:hover {
-            color: $color-red;
+        &:hover, &:focus {
+            color: #E40505;
+        }
+        &:focus {
+             box-shadow: 0 0px 0px 3px $color-orange   inset;       
         }
         span {
             background-color: $color-orange;
