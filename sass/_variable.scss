@@ -3,55 +3,46 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor:				#1579a9;				//主色				
-$secondaryColor:			#528124; 					//輔助色
-$lightColor:				#c94c00;					//焦點
+$primaryColor: #1579a9; //主色
+$secondaryColor: #528124; //輔助色
+$lightColor: #c94c00; //焦點
 // 但注意真實顏色與語意的關聯必須易於辨識
-$color-default: 			#DDD;
-$color-gray: 				#CCC;
-$color-green:				#7ba400;
-$color-orange: 				#c94c00;
-$color-red: 				#eb0202;
-$color-blue: 				#116289;
-$color-yellow: 				#ffbe00;
-$color-purple: 				#8500e2;
-$hrColor:					#666;		  			 //hr顏色
-$color-word:				#333;
+$color-default: #ddd;
+$color-gray: #ccc;
+$color-green: #7ba400;
+$color-orange: #c94c00;
+$color-red: #eb0202;
+$color-blue: #116289;
+$color-yellow: #ffbe00;
+$color-purple: #8500e2;
+$hrColor: #666; //hr顏色
+$color-word: #333;
 // 連結顏色
-$aColor:					$color-word;
-$aHover:					$color-red;
+$aColor: $color-word;
+$aHover: $color-red;
 // 表單focus顏色
-$form-focus:				darken($primaryColor,10);				//表單
-$aFocus:                    #ffbe00;
+$form-focus: darken($primaryColor, 10); //表單
+$aFocus: #ffbe00;
 //-------------------------------------------------------------字型--------//
 
 // 字型設定
-$font-family: Arial, Helvetica, sans-serif, "微軟正黑體";
-$font-size:					1em;
+$font-family: Arial, Helvetica, sans-serif, '微軟正黑體';
+$font-size: 1em;
 
 //-------------------------------------------------------------格線系統-----//
 
 // 格線系統
-$grid-columns:              12 !default;			   //格線欄位數
-$grid-gutter-width:         30px !default;			   //左右padding
-$container-max:             1200px !default;		   //container最大寬
+$grid-columns: 12 !default; //格線欄位數
+$grid-gutter-width: 30px !default; //左右padding
+$container-max: 1200px !default; //container最大寬
 
 //mediaquery
-$screen-lg:        			1200px !default;  	       //電腦
-$screen-md:        			992px  !default;      	   //平板
-$screen-sm:        			768px  !default;     	   //手機 
-$screen-xs:        			576px  !default;      	   //極小尺寸
+$screen-lg: 1200px !default; //電腦
+$screen-md: 992px !default; //平板
+$screen-sm: 768px !default; //手機
+$screen-xs: 576px !default; //極小尺寸
 
 //-------------------------------------------------------------客製化------//
 
 // 圖片
-$rounded-angle:             16px;					   //圖片導角
-
-
-
-
-
-
-
-
-
+$rounded-angle: 16px; //圖片導角
